@@ -1,0 +1,41 @@
+<Window x:Class="ZdravoCorp.View.NurseMainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        mc:Ignorable="d"
+        Title="" Height="400" Width="670">
+        <DockPanel>
+                <Menu DockPanel.Dock="Top">
+                        <Menu.ItemsPanel>
+                                <ItemsPanelTemplate>
+                                        <DockPanel HorizontalAlignment="Stretch" />
+                                </ItemsPanelTemplate>
+                        </Menu.ItemsPanel>
+                        <MenuItem Header="_Add">
+                               <MenuItem Header="_Patient" Name="AddPatientBtn" Click="AddPatientBtn_OnClick" /> 
+                               <MenuItem Header="_Urgent patient" Name="AddUrgentPatientBtn" Click="AddUrgentPatientBtn_OnClick" />
+                        </MenuItem>
+                        <MenuItem Header="_View medical chart" Name="ViewMedicalChartBtn" Click="ViewMedicalChartBtn_OnClick"/>
+                        <MenuItem Header="_Modify patient" Name="ModifyPatientBtn" Click="ModifyPatientBtn_OnClick" />
+                        <MenuItem Header="_Delete patient" Name="DeletePatientBtn" Click="DeletePatientBtn_OnClick" />
+                        <MenuItem Header="_Patient check-in" Name="CheckInBtn" Click="CheckInBtn_OnClick" />
+                        <MenuItem Header="_Schedule urgent appointment" Name="ScheduleUrgentAppointmentBtn" Click="ScheduleUrgentAppointmentBtn_OnClick" />
+                        <MenuItem HorizontalAlignment="Right" Header="_Log out" Name="LogOutBtn" Click="LogOutBtn_OnClick" />
+                </Menu>
+                <DataGrid Name="PatientDataGrid" IsReadOnly="True"
+                          ItemsSource="{Binding Path=Patients, UpdateSourceTrigger=PropertyChanged}"
+                          SelectedItem="{Binding Path=SelectedPatient, UpdateSourceTrigger=PropertyChanged}"
+                          AutoGenerateColumns="False">
+                       <DataGrid.Columns>
+                               <DataGridTextColumn Header="Email" Binding="{Binding Path=Email}" />
+                               <DataGridTextColumn Header="Password" Binding="{Binding Path=Password}" />
+                               <DataGridTextColumn Header="Name" Binding="{Binding Path=Name}" />
+                               <DataGridTextColumn Header="Surname" Binding="{Binding Path=Surname}" />
+                               <DataGridTextColumn Header="Address" Binding="{Binding Path=Address}" />
+                               <DataGridTextColumn Header="Date of birth" Binding="{Binding Path=DateOfBirth}" />
+                               <DataGridCheckBoxColumn Header="Blocked" Binding="{Binding Path=Blocked}" Width="*" />
+                       </DataGrid.Columns> 
+                </DataGrid>
+        </DockPanel>
+</Window>

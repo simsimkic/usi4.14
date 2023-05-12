@@ -1,0 +1,40 @@
+<Window x:Class="ZdravoCorp.View.CreateUrgentPatientWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        mc:Ignorable="d"
+        Title="Create urgent patient account" Height="280" Width="330">
+    <Grid>
+        <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="155" />
+                <ColumnDefinition Width="155" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+                <RowDefinition Height="30" />
+                <RowDefinition Height="30" />
+                <RowDefinition Height="30" />
+                <RowDefinition Height="30" />
+                <RowDefinition Height="30" />
+                <RowDefinition Height="30" />
+                <RowDefinition Height="30" />
+                <RowDefinition Height="20" />
+        </Grid.RowDefinitions>
+                <Label Grid.Row="0" VerticalAlignment="Center" Width="150" Grid.Column="0">Name:</Label>
+                <TextBox Name="NameTextBox" Grid.Row="0" VerticalAlignment="Center" Width="150" Grid.Column="1"></TextBox>
+                <Label Grid.Row="1" VerticalAlignment="Center" Width="150" Grid.Column="0">Surname:</Label>
+                <TextBox Name="SurnameTextBox" Grid.Row="1" VerticalAlignment="Center" Width="150" Grid.Column="1"></TextBox>
+                <Label Grid.Row="2" VerticalAlignment="Center" Width="150" Grid.Column="0">Date of birth:</Label>
+                <DatePicker Name="DateOfBirthPicker" Grid.Row="2" VerticalAlignment="Center" Width="150" Grid.Column="1"></DatePicker>
+                <Label Grid.Row="3" VerticalAlignment="Center" Width="150" Grid.Column="0">Height:</Label>
+                <TextBox Name="HeightTextBox" Grid.Row="3" VerticalAlignment="Center" Width="150" Grid.Column="1"></TextBox>
+                <Label Grid.Row="4" VerticalAlignment="Center" Width="150" Grid.Column="0">Weight:</Label>
+                <TextBox Name="WeightTextBox" Grid.Row="4" VerticalAlignment="Center" Width="150" Grid.Column="1"></TextBox>
+                <Label Grid.Row="5" VerticalAlignment="Center" Width="150" Grid.Column="0">Past conditions:</Label>
+                <TextBox Name="PastConditionsTextBox" Grid.Row="5" VerticalAlignment="Center" Width="150" Grid.Column="1" /> 
+                <Label Grid.Row="6" VerticalAlignment="Center" Width="150" Grid.Column="0">Allergies:</Label>
+                <TextBox Name="AllergiesTextBox" Grid.Row="6" VerticalAlignment="Center" Width="150" Grid.Column="1" />
+                <Button Name="AddBtn" Click="AddBtn_OnClick" Grid.Row="7" VerticalAlignment="Center" Grid.Column="0" Width="150" >Add</Button>
+                <Button Name="CancelBtn" Click="CancelBtn_OnClick" Grid.Row="7" VerticalAlignment="Center" Grid.Column="1" Width="150">Cancel</Button>
+    </Grid>
+</Window>

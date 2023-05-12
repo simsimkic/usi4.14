@@ -1,0 +1,25 @@
+﻿<Window x:Class="ZdravoCorp.View.EquipmentRequestTable"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ZdravoCorp.View"
+        mc:Ignorable="d"
+        Title="EquipmentRequestTable" Height="300" Width="500" ResizeMode="NoResize">
+    <Grid>
+        <DataGrid ItemsSource="{Binding Path=Binding, UpdateSourceTrigger=PropertyChanged}" 
+                  Margin="0,55,0,0" Name="EquipmentList" AutoGenerateColumns="False" 
+                  SelectedItem="{Binding Path=SelectedEquipment, UpdateSourceTrigger=PropertyChanged}" IsReadOnly="True">
+            <DataGrid.Columns>
+                <DataGridTextColumn CanUserResize="False" Header="Name"  Binding="{Binding Name}" Width="150"/>
+                <DataGridTextColumn CanUserResize="False" Header="Type" Binding="{Binding Type}" Width="150"/>
+                <DataGridTextColumn CanUserResize="False" Header="Total Quantity" Binding="{Binding Quantity}" Width="150"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button Click="Button_Click" Content="Request Order" HorizontalAlignment="Left" Margin="10,20" VerticalAlignment="Top" Width="100"></Button>
+        <Button Click="Order_Table" Content="Pending Orders" HorizontalAlignment="Left" Margin="120,20" VerticalAlignment="Top" Width="120"></Button>
+
+        <Button Click="Button_Click1" Content="Back" HorizontalAlignment="Right" Margin="10,20" VerticalAlignment="Top" Width="100"></Button>
+
+    </Grid>
+</Window>

@@ -1,0 +1,40 @@
+﻿<Window x:Class="ZdravoCorp.View.ScheduleModifyAppointmentWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="ScheduleAppointment" Height="358" Width="686"
+        ResizeMode="NoResize">
+    <Grid>
+        <Label Content="Patient: " FontSize="15" HorizontalAlignment="Left" Margin="32,44,0,0" VerticalAlignment="Top" Width="60" Height="34"/>
+        <Label Content="Doctor: " FontSize="15" HorizontalAlignment="Left" Margin="32,107,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.942,0.363" Width="60" Height="35"/>
+        <Label Content="Date: " FontSize="15" HorizontalAlignment="Left" Margin="32,168,0,0" VerticalAlignment="Top" Width="60" Height="35"/>
+        <DatePicker Name="DatePicker" HorizontalAlignment="Left" Margin="180,178,0,0" VerticalAlignment="Top" Width="121" Height="28"/>
+        <TextBox Name="PatientName" HorizontalAlignment="Left" Margin="180,48,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="121" Height="27" IsEnabled="False"/>
+        <ComboBox Name="DoctorPicker" HorizontalAlignment="Left" Margin="181,113,0,0" VerticalAlignment="Top" Width="120" Height="25"
+                  ItemsSource="{Binding Path=Doctors}"
+                  DisplayMemberPath="Email"
+                  SelectedValuePath="Email"/>
+        <Button Name="AppointmentButton" Content="Schedule" HorizontalAlignment="Left" Margin="455,48,0,0" VerticalAlignment="Top" Height="56" Width="146" Click="Schedule_Modify_Click">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="5"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <Button Content="Abandon" HorizontalAlignment="Left" Margin="455,214,0,0" VerticalAlignment="Top" Height="56" Width="146" Click="Abandon_Click">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="5"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <Label Content="Time: " FontSize="15" HorizontalAlignment="Left" Margin="32,237,0,0" VerticalAlignment="Top" Width="60" Height="34"/>
+        <TextBox HorizontalAlignment="Left" Margin="181,240,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Height="27" Name="TimePicker"/>
+        <Label Name="WarningLabel" Content="Enter time correctly" HorizontalAlignment="Left" Margin="322,240,0,0" VerticalAlignment="Top" Foreground="#FFF60606" Visibility="Hidden"/>
+        
+
+
+    </Grid>
+</Window>

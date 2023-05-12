@@ -1,0 +1,17 @@
+﻿<Window x:Class="ZdravoCorp.View.OrderEquipment"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ZdravoCorp.View"
+        mc:Ignorable="d"
+        Title="OrderEquipment" Height="200" Width="500">
+    <Grid>
+        <Label Margin="10,20" HorizontalAlignment="Left" VerticalAlignment="Top" Width="100">Equipment:</Label>
+        <Label Margin="10,50" HorizontalAlignment="Left" VerticalAlignment="Top" Width="130">Quantity to order:</Label>
+        <TextBox Name="EquipmentTextBox" IsReadOnly="true" Margin="10,20" HorizontalAlignment="Right" VerticalAlignment="Top" Width="150"></TextBox>
+        <TextBox Name="QuantityTextBox" Margin="10,50" HorizontalAlignment="Right" VerticalAlignment="Top" Width="150"></TextBox>
+        <Button Click="Order_Click" Content="Request Order" HorizontalAlignment="Left" Margin="10,30" VerticalAlignment="Bottom" Width="100"></Button>
+        <Button Click="Cancel_Click" Content="Cancel Order" HorizontalAlignment="Right" Margin="10,30" VerticalAlignment="Bottom" Width="100"></Button>
+    </Grid>
+</Window>

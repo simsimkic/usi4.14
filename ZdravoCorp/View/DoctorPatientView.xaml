@@ -1,0 +1,79 @@
+﻿<Window x:Class="ZdravoCorp.View.DoctorPatientView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="DoctorPatientView" Height="450" Width="800">
+    <Grid>
+        <DataGrid Name="PatientDataGrid" IsReadOnly="True" HorizontalAlignment="Center" Height="355" Margin="0,10,0,0" VerticalAlignment="Top" Width="752"
+                          ItemsSource="{Binding Path=Patients, UpdateSourceTrigger=PropertyChanged}"
+                          SelectedItem="{Binding Path=SelectedPatient, UpdateSourceTrigger=PropertyChanged}"
+                          AutoGenerateColumns="False">
+
+            <DataGrid.Resources>
+                <Style TargetType="{x:Type DataGridColumnHeader}">
+                    <Setter Property="Background" Value="Turquoise"/>
+                    <Setter Property="FontWeight" Value="SemiBold"/>
+                    <Setter Property="BorderThickness" Value="0,0,1,2"/>
+                    <Setter Property="BorderBrush" Value="Black"/>
+                </Style>
+            </DataGrid.Resources>
+
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Email" Binding="{Binding Path=Email}"  Width="90"/>
+                <DataGridTextColumn Header="Name" Binding="{Binding Path=Name}"  Width="90"/>
+                <DataGridTextColumn Header="Surname" Binding="{Binding Path=Surname}"  Width="90"/>
+                <DataGridTextColumn Header="Address" Binding="{Binding Path=Address}"  Width="130"/>
+                <DataGridTextColumn Header="Date of birth" Binding="{Binding Path=DateOfBirth}"  Width="90"/>
+                <DataGridCheckBoxColumn Header="Blocked" Binding="{Binding Path=Blocked}" Width="70"/>
+                <DataGridTemplateColumn Width="*">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button x:Name="MedicalRecordButton" Click="OpenMedicalRecord">Medical Record</Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <TextBox Name ="NameTextBox" HorizontalAlignment="Left" Height="19" Margin="75,388,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="80"/>
+        <Label Content="Name:" Name="NameLabel" HorizontalAlignment="Left" Height="27" Margin="24,385,0,0" VerticalAlignment="Top" Width="43"/>
+        <TextBox Name ="SurnameTextBox" HorizontalAlignment="Left" Height="19" Margin="225,388,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="80"/>
+        <Label Content="Surname:" Name="SurnameLabel"  HorizontalAlignment="Left" Height="27" Margin="160,385,0,0" VerticalAlignment="Top" Width="60"/>
+        <TextBox Name ="EmailTextBox" HorizontalAlignment="Left" Height="19" Margin="355,388,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="80"/>
+        <Label Content="Email:" Name="EmailLabel" HorizontalAlignment="Left" Height="27" Margin="310,385,0,0" VerticalAlignment="Top" Width="47"/>
+        <Button Content="Search" Name="SearchButton" HorizontalAlignment="Left" Height="32" Margin="588,375,0,0" VerticalAlignment="Top" Width="70" Click="SearchPatients"/>
+        <DataGrid Visibility="Hidden" x:Name="PatientDataGridAfterSearch" IsReadOnly="True" HorizontalAlignment="Center" Height="355" Margin="0,10,0,0" VerticalAlignment="Top" Width="752"
+            ItemsSource="{Binding Patients, UpdateSourceTrigger=PropertyChanged}"
+            SelectedItem="{Binding SelectedPatient, UpdateSourceTrigger=PropertyChanged}"
+            AutoGenerateColumns="False">
+
+            <DataGrid.Resources>
+                <Style TargetType="{x:Type DataGridColumnHeader}">
+                    <Setter Property="Background" Value="Turquoise"/>
+                    <Setter Property="FontWeight" Value="SemiBold"/>
+                    <Setter Property="BorderThickness" Value="0,0,1,2"/>
+                    <Setter Property="BorderBrush" Value="Black"/>
+                </Style>
+            </DataGrid.Resources>
+
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Email" Binding="{Binding Email}"  Width="90"/>
+                <DataGridTextColumn Header="Name" Binding="{Binding Name}"  Width="90"/>
+                <DataGridTextColumn Header="Surname" Binding="{Binding Surname}"  Width="90"/>
+                <DataGridTextColumn Header="Address" Binding="{Binding Address}"  Width="130"/>
+                <DataGridTextColumn Header="Date of birth" Binding="{Binding DateOfBirth}"  Width="90"/>
+                <DataGridCheckBoxColumn Header="Blocked" Binding="{Binding Blocked}" Width="70"/>
+                <DataGridTemplateColumn Width="*">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button x:Name="MedicalRecordButton" Click="OpenMedicalRecord" Content="Medical Record"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button Content="Remove Search" Name="RemoveSearchButton" HorizontalAlignment="Left" Height="32" Margin="679,375,0,0" VerticalAlignment="Top" Width="97" Click="RemoveSearch"/>
+        <Button Content="Go Back" Name="GoBackButton" HorizontalAlignment="Left" Height="32" Margin="679,375,0,0" VerticalAlignment="Top" Width="97" Click="GoBack"/>
+    </Grid>
+</Window>

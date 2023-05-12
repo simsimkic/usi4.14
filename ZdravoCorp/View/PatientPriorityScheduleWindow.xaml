@@ -1,0 +1,28 @@
+﻿<Window x:Class="ZdravoCorp.View.PatientPriorityScheduleWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ZdravoCorp.View"
+        mc:Ignorable="d"
+        Title="PatientPriorityScheduleWindow" Height="403" Width="617" ResizeMode="NoResize">
+    <Grid Margin="0,0,0,-6">
+        <ComboBox Name="DoctorPicker" HorizontalAlignment="Left" Margin="162,68,0,0" VerticalAlignment="Top" Width="120" Height="27"
+                  ItemsSource="{Binding Path=Doctors}"
+                  DisplayMemberPath="Email"
+                  SelectedValuePath="Email"/>
+        <Label Content="Desired Doctor" HorizontalAlignment="Left" Margin="10,65,0,0" VerticalAlignment="Top" Width="123" FontSize="15"/>
+        <DatePicker Name="DatePicker" HorizontalAlignment="Left" Margin="161,131,0,0" VerticalAlignment="Top" Width="121" Height="28"/>
+        <Label Content="Date Deadline" HorizontalAlignment="Left" Margin="10,127,0,0" VerticalAlignment="Top" Width="123" FontSize="15"/>
+        <Label Content="Time of day:" HorizontalAlignment="Left" Margin="10,194,0,0" VerticalAlignment="Top" Width="99" FontSize="15"/>
+        <Label Content="From:" HorizontalAlignment="Left" Margin="128,194,0,0" VerticalAlignment="Top" FontSize="15" RenderTransformOrigin="0.191,0.623"/>
+        <Label Content="To:" HorizontalAlignment="Left" Margin="128,243,0,0" VerticalAlignment="Top" FontSize="15" RenderTransformOrigin="0.656,1.705"/>
+        <TextBox HorizontalAlignment="Left" Margin="207,197,0,0" TextWrapping="Wrap" Name="StartTime" VerticalAlignment="Top" Width="120" Height="24"/>
+        <TextBox HorizontalAlignment="Left" Margin="207,246,0,0" TextWrapping="Wrap" Name="EndTime" VerticalAlignment="Top" Width="120" Height="24"/>
+        <Label Content="Priority" HorizontalAlignment="Left" Margin="10,307,0,0" VerticalAlignment="Top" FontSize="15"/>
+        <RadioButton Content="Doctor" Name="RadioDoctor" GroupName="Priority" IsChecked="True" HorizontalAlignment="Left" Margin="100,314,0,0" VerticalAlignment="Top" FontSize="15"/>
+        <RadioButton Content="Time of day" Name="RadioTime" GroupName="Priority" HorizontalAlignment="Left" Margin="207,316,0,0" VerticalAlignment="Top" FontSize="15"/>
+        <Button Content="Schedule" Name="Schedule_Button" HorizontalAlignment="Left" Margin="429,57,0,0" VerticalAlignment="Top" Height="46" Width="119" Click="Schedule_Button_Click"/>
+        <Button Content="Abandon" Name="Abandon_Button" HorizontalAlignment="Left" Margin="429,170,0,0" VerticalAlignment="Top" Height="45" Width="119" Click="Abandon_Button_Click"/>
+    </Grid>
+</Window>

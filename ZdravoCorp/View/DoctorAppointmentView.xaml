@@ -1,0 +1,53 @@
+﻿<Window x:Class="ZdravoCorp.View.DoctorAppointmentView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="DoctorAppointmentView" Height="493" Width="870" ResizeMode="NoResize" Background="White">
+    <Grid>
+        <DataGrid Name="AppointmentGrid" HorizontalAlignment="Center" Height="290" VerticalAlignment="Center" Width="812">
+
+            <DataGrid.Resources>
+                <Style TargetType="{x:Type DataGridColumnHeader}">
+                    <Setter Property="Background" Value="Turquoise"/>
+                    <Setter Property="FontWeight" Value="SemiBold"/>
+                    <Setter Property="BorderThickness" Value="0,0,1,2"/>
+                    <Setter Property="BorderBrush" Value="Black"/>
+                </Style>
+            </DataGrid.Resources>
+
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Id" Binding="{Binding Id}" Width="80"/>
+                <DataGridTextColumn Header="Patient" Binding="{Binding Patient.Email}" Width="100"/>
+                <DataGridTextColumn Header="Date And Time"  Binding="{Binding Timeslot.DateTime}" Width="140"/>
+                <DataGridTextColumn Header="Duration" Binding="{Binding Timeslot.DurationInMinutes}" Width="100"/>
+                <DataGridTextColumn Header="IsSurgery" Binding="{Binding IsSurgery}" Width="80"/>
+                <DataGridTemplateColumn Width="100">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button x:Name="ModifyButton" Click="ModifyAppointment">Modify</Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Width="100">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button x:Name="DeleteButton" Click="DeleteAppointment">Delete</Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Width="*">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Name="StartButton" Click="StartAppointment">Start</Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button Content="Add" HorizontalAlignment="Center" Height="44" Margin="0,392,0,0" VerticalAlignment="Top" Width="100" Background="Turquoise" Foreground="White" Click="AddApointment"/>
+        <Label Content="Your Appointments" HorizontalAlignment="Center" Height="60" Margin="0,10,0,0" VerticalAlignment="Top" Width="320" FontSize="36" Foreground="Turquoise"/>
+        <Button Content="Go Back" Name="GoBackButton" HorizontalAlignment="Left" Height="32" Margin="744,420,0,0" VerticalAlignment="Top" Width="97" Click="GoBack"/>
+    </Grid>
+</Window>

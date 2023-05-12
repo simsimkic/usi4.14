@@ -1,0 +1,34 @@
+<Window x:Class="ZdravoCorp.View.RescheduleAppointmentWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        mc:Ignorable="d"
+        Title="RescheduleAppointmentWindow" Height="450" Width="465">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="25" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="225" />
+            <ColumnDefinition Width="225" />
+        </Grid.ColumnDefinitions>
+        <DataGrid Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"
+                  ItemsSource="{Binding Path=Appointments, UpdateSourceTrigger=PropertyChanged}"
+                  SelectedItem="{Binding Path=SelectedAppointment, UpdateSourceTrigger=PropertyChanged}"
+                  Name="RescheduleGrid" IsReadOnly="True"
+                  AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Id" Binding="{Binding Path=Id}" />
+                <DataGridTextColumn Header="Patient" Binding="{Binding Path=Patient.Email}" />
+                <DataGridTextColumn Header="Doctor" Binding="{Binding Path=Doctor.Email}" />
+                <DataGridTextColumn Header="Date"  Binding="{Binding Path= Timeslot.DateTime}" />
+                <DataGridTextColumn Header="Time (min)" Binding="{Binding Path=Timeslot.DurationInMinutes}" />
+                <DataGridTextColumn Header="IsOperation" Binding="{Binding Path=IsSurgery}" Width="*" />
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button Name="RescheduleBtn" Grid.Row="1" Grid.Column="0" Width="220" VerticalAlignment="Center" Click="RescheduleBtn_OnClick">Reschedule</Button>
+        <Button Name="CancelBtn" Grid.Row="1" Grid.Column="1" Width="220" VerticalAlignment="Center" Click="CancelBtn_OnClick">Cancel</Button>
+    </Grid>
+</Window>

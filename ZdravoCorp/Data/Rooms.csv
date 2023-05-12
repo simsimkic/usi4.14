@@ -1,0 +1,11 @@
+Accommodation Room|2|Chair,14,False,4;Table,5,False,4;Bed,0,False,1;Cupboard,2,False,3;Pens,0,True,3;Gauze,0,True,1;Band-Aid,0,True,1;Syringe,0,True,2;Tissues,30,True,4
+Accommodation Room|4|Chair,12,False,4;Table,8,False,4;Bed,1,False,1;Cupboard,3,False,3;Pens,0,True,3;Gauze,19,True,1;Band-Aid,0,True,1;Syringe,0,True,2;Tissues,10,True,4
+Accommodation Room|1|Chair,15,False,4;Table,3,False,4;Bed,0,False,1;Cupboard,2,False,3;Pens,0,True,3;Gauze,0,True,1;Band-Aid,0,True,1;Syringe,0,True,2;Tissues,50,True,4
+Exam Room|4|Chair,8,False,3;Table,4,False,1;Bed,1,False,1;Cupboard,4,False,3;Pens,0,True,3;Gauze,7,True,1;Band-Aid,0,True,1;Syringe,0,True,2;Tissues,10,True,4
+Accommodation Room|3|Chair,20,False,4;Table,6,False,4;Bed,0,False,1;Cupboard,2,False,3;Pens,0,True,3;Gauze,0,True,1;Band-Aid,0,True,1;Syringe,0,True,2;Tissues,16,True,4
+Exam Room|3|Chair,2,False,1;Table,2,False,1;Bed,2,False,1;Cupboard,4,False,3;Pens,20,True,3;Gauze,1,True,1;Band-Aid,0,True,1;Syringe,0,True,2;Tissues,0,True,4
+Surgery Hall|1|Chair,4,False,3;Table,4,False,2;Bed,4,False,2;Cupboard,4,False,3;Pens,11,True,3;Gauze,17,True,1;Band-Aid,2,True,1;Syringe,1,True,2;Tissues,10,True,4
+Surgery Hall|2|Chair,7,False,3;Table,4,False,2;Bed,4,False,2;Cupboard,4,False,3;Pens,0,True,3;Gauze,0,True,1;Band-Aid,0,True,1;Syringe,0,True,2;Tissues,10,True,4
+Warehouse|0|Chair,22,False,3;Table,17,False,3;Bed,1,False,3;Cupboard,3,False,3;Pens,6,True,3;Gauze,14,True,1;Band-Aid,1,True,1;Syringe,0,True,2;Tissues,7,True,4
+Exam Room|1|Chair,5,False,1;Table,4,False,1;Bed,2,False,1;Cupboard,4,False,3;Pens,8,True,3;Gauze,1,True,1;Band-Aid,0,True,1;Syringe,3,True,2;Tissues,30,True,4
+Exam Room|2|Chair,5,False,1;Table,4,False,1;Bed,2,False,1;Cupboard,4,False,3;Pens,5,True,3;Gauze,105,True,1;Band-Aid,0,True,1;Syringe,0,True,2;Tissues,7,True,4

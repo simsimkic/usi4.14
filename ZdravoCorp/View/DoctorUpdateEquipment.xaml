@@ -1,0 +1,43 @@
+﻿<Window x:Class="ZdravoCorp.View.DoctorUpdateEquipment"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ZdravoCorp.View"
+        mc:Ignorable="d"
+        Title="DoctorUpdateEquipment" Height="450" Width="800">
+    <Grid>
+        <Label Content="Room Type:" HorizontalAlignment="Left" Height="47" Margin="66,36,0,0" VerticalAlignment="Top" Width="125" FontSize="20"/>
+        <Label Content="Room Name:" HorizontalAlignment="Left" Height="47" Margin="357,36,0,0" VerticalAlignment="Top" Width="132" FontSize="20"/>
+        <TextBox Name="RoomTypeTextBox" HorizontalAlignment="Left" Height="47" Margin="196,36,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="122" FontSize="20"/>
+        <TextBox Name="RoomNameTextBox" HorizontalAlignment="Left" Height="47" Margin="507,36,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="122" FontSize="20"/>
+        <Button x:Name="SearchButton" Content="Search" HorizontalAlignment="Left" Height="47" Margin="659,36,0,0" VerticalAlignment="Top" Width="117" FontSize="20" Click="SearchRoom"/>
+        <DataGrid Name="EquipmentGrid" HorizontalAlignment="Left" Height="296" VerticalAlignment="Top" Width="200" Margin="214,108,0,0">
+
+            <DataGrid.Resources>
+                <Style TargetType="{x:Type DataGridColumnHeader}">
+                    <Setter Property="Background" Value="Turquoise"/>
+                    <Setter Property="FontWeight" Value="SemiBold"/>
+                    <Setter Property="BorderThickness" Value="0,0,1,2"/>
+                    <Setter Property="BorderBrush" Value="Black"/>
+                </Style>
+            </DataGrid.Resources>
+
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Name" Binding="{Binding Name}" Width="100"/>
+                <DataGridTextColumn Header="Quantity" Binding="{Binding Quantity}" Width="*"/>
+
+            </DataGrid.Columns>
+        </DataGrid>
+        <Label Content="Equipment:" HorizontalAlignment="Left" Height="39" Margin="66,121,0,0" VerticalAlignment="Top" Width="125" FontSize="20"/>
+        <Button Name ="SaveButton" IsEnabled="False" Content="Save Changes" HorizontalAlignment="Left" Height="37" Margin="626,367,0,0" VerticalAlignment="Top" Width="150" FontSize="20" Click="SaveChanges"/>
+        <Label Content="Name:" HorizontalAlignment="Left" Height="37" Margin="501,160,0,0" VerticalAlignment="Top" Width="70" FontSize="20"/>
+        <Label Content="Quantity used:" HorizontalAlignment="Left" Height="37" Margin="501,208,0,0" VerticalAlignment="Top" Width="148" FontSize="20"/>
+        <TextBox Name="EquipmentNameTextBox" HorizontalAlignment="Left" Height="37" Margin="575,160,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="187" FontSize="20"/>
+        <TextBox Name="QuantityUsedTextBox"  HorizontalAlignment="Left" Height="37" Margin="645,208,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="117" FontSize="20"/>
+        <Label Content="Equipment Used" HorizontalAlignment="Left" Height="39" Margin="493,114,0,0" VerticalAlignment="Top" Width="165" FontSize="20"/>
+        <Button Name="UpdateQuantityButton" Content="Update Quantity" HorizontalAlignment="Left" Height="29" Margin="593,256,0,0" VerticalAlignment="Top" Width="94" Click="ChangeQuantity"/>
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="192" Margin="475,108,0,0" VerticalAlignment="Top" Width="301"/>
+
+    </Grid>
+</Window>

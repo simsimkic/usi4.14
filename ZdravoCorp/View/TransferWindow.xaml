@@ -1,0 +1,23 @@
+﻿<Window x:Class="ZdravoCorp.View.TransferWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ZdravoCorp.View"
+        mc:Ignorable="d"
+        Title="TransferWindow" Height="320" Width="500" ResizeMode="NoResize">
+    <Grid>
+        <Label Margin="10,20" HorizontalAlignment="Left" VerticalAlignment="Top" Width="100">Equipment:</Label>
+        <Label Margin="10,110" HorizontalAlignment="Left" VerticalAlignment="Top" Width="130">Quantity to transfer:</Label>
+        <Label Margin="10,80" HorizontalAlignment="Left" VerticalAlignment="Top" Width="130">Transfer to room:</Label>
+        <Label Margin="10,50" HorizontalAlignment="Left" VerticalAlignment="Top" Width="130">Transfer from room:</Label>
+        <Label Margin="10,110" HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="130">Date of transfer:</Label>
+        <TextBox Name="EquipmentTextBox" IsReadOnly="true" Margin="10,20" HorizontalAlignment="Right" VerticalAlignment="Top" Width="200"></TextBox>
+        <ComboBox Name="Quantity" Margin="10,110" HorizontalAlignment="Right" VerticalAlignment="Top" Width="200"></ComboBox>
+        <ComboBox Name="ToRoom" SelectedIndex="0" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="10,80" Width="200"/>
+        <ComboBox SelectionChanged="FromRoom_SelectionChanged" Name="FromRoom" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="10,50" Width="200"/>
+        <DatePicker Name="TransferDate" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="10,110" Width="200"></DatePicker>
+        <Button Click="Transfer_Click" Content="Request Transfer" HorizontalAlignment="Left" Margin="10,30" VerticalAlignment="Bottom" Width="100"></Button>
+        <Button Click="Cancel_Click" Content="Cancel Order" HorizontalAlignment="Right" Margin="10,30" VerticalAlignment="Bottom" Width="100"></Button>
+    </Grid>
+</Window>

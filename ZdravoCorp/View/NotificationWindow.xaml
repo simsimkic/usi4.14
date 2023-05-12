@@ -1,0 +1,30 @@
+<Window x:Class="ZdravoCorp.View.NotificationWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        mc:Ignorable="d"
+        Title="NotificationWindow" Height="450" Width="420">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="25" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="205" />
+            <ColumnDefinition Width="205" />
+        </Grid.ColumnDefinitions>
+        <DataGrid Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Name="NotificationGrid"
+                  ItemsSource="{Binding Path=Notifications, UpdateSourceTrigger=PropertyChanged}"
+                  SelectedItem="{Binding Path=SelectedNotification, UpdateSourceTrigger=PropertyChanged}"
+                  IsReadOnly="True" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="_Id" Binding="{Binding Path=Id}" />
+                <DataGridTextColumn Header="_Content" Binding="{Binding Path=Content}" />
+                <DataGridTextColumn Header="_Status" Binding="{Binding Path=Status}" Width="*" />
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button Name="ReadBtn" Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" Width="200" Click="ReadBtn_OnClick">Read</Button>
+        <Button Name="CloseBtn" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" Width="200" Click="CloseBtn_OnClick">Close</Button>
+    </Grid>
+</Window>
